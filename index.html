@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" ng-app = "myApp">
+<head>
+     <title>Get all details related to football</title>
+
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+     <!-- Angular Animate CSS -->
+      <link href = "css/animate.css" rel = "stylesheet">
+
+</head>
+<body>
+
+     <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-md navbar-custom navbar-transparent pt-3">
+
+          <!-- Brand -->
+     	<a class="navbar-brand mr-auto ml-md-5 text-uppercase" href="#!/">
+               <img src="img/football-pitch.png" width="35" height="30" class="d-inline-block" alt="">
+               Kickinfo
+          </a>
+
+          <!-- Toggle Button -->
+          <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+               data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Toggle Content -->
+     	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+     		<ul class="navbar-nav ml-auto mr-md-5 text-uppercase">
+     			<li class="nav-item">
+     				<a class="nav-link" href="#!/">Home</a>
+     			</li>
+                    <li class="nav-item">
+     				<a class="nav-link" href="#!/schedule">Schedule</a>
+     			</li>
+                    <li class="nav-item">
+     				<a class="nav-link" href="#!/statistics">Statistics</a>
+     			</li>
+     		</ul>
+     	</div>
+     </nav>
+
+     <!-- Routing View -->
+     <div class="view-container">
+          <div ng-view class="view-frame"></div>
+     </div>
+
+     <!-- jQuery first, then Popper.js, then Bootstrap JS ( For Bootstrap 4 ) -->
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+     <!-- Popper JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+     <!-- AngularJS -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+     <!-- AngularJS Route -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
+     <!-- AngularJS CSS for dynamic styling -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
+
+     <!-- AngularJS animation -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+
+     <!-- AngularJS Filters -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js"></script>
+
+     <!-- Custom Angular JS-->
+     <script src = "angular/style_ang.js"></script>
+     <script src = "angular/style_routing.js"></script>
+
+</body>
+</html>

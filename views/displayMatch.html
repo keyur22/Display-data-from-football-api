@@ -1,0 +1,30 @@
+<!-- View for displaying details of single match -->
+
+<div class = "container-fluid"  id = "display">
+
+     <!-- Heading Section
+     <div class = "heading text-uppercase">
+          <h2><b>{{display.heading}}</b></h2>
+     </div>-->
+     <br><br><br>
+     <div class = "row m-1 text-light" id = "details">
+          <div class = "col-12 text-center text-uppercase p-3"><b>{{display.league}}</b></div>
+          <div class = "col-12 text-center">
+                {{display.matchday}}
+          </div>
+          <div class = "col-12 text-center">
+               {{display.date | date: mediumDate}}
+          </div><br><br><br><br>
+          <div class = "col-4 mb-3 d-flex align-items-center justify-content-center text-uppercase name {{display.sclass1}}">
+               <span class = "code">{{display.code1}}</span>
+               <span class = "tname">{{display.team1}}</span>
+          </div>
+          <div class = "col-4 mb-3 d-flex align-items-center justify-content-center score">
+               <span class = "{{display.sclass1}}">{{display.score1}}</span>&nbsp-&nbsp<span class = "{{display.sclass2}}">{{display.score2}}</span>
+          </div>
+          <div class = "col-4 mb-3 d-flex align-items-center justify-content-center text-uppercase name {{display.sclass2}}">
+               <span class = "code">{{display.code2}}</span>
+               <span class = "tname">{{display.team2}}</span>
+          </div>
+     </div>
+</div>

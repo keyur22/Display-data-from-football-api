@@ -1,0 +1,124 @@
+<!-- View for displaying schedule for all matches -->
+
+<div class = "container-fluid"  id = "schedule">
+
+     <!-- Heading Section-->
+     <div class = "heading text-uppercase">
+          <h2><b>{{fixture.heading}}</b></h2>
+     </div>
+
+     <!--
+     <div id = "warning">
+          <h5>Please select appropriate filters</h5>
+     </div><br>
+     -->
+
+     <!-- Filter Section -->
+     <div class="card text-center ml-md-5 mr-md-5 border-dark">
+          <div class="card-header">
+               <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                       <a class="nav-link active bg-primary text-light">Filters</a>
+                    </li>
+                    <!--
+                    <li class="nav-item">
+                       <a class="nav-link text-muted" href="#">Please select appropriate filters</a>
+                    </li>
+                    -->
+
+                    <!-- Reset Button
+                    <li class="nav-item mr-md-1 ml-md-auto">
+                         <button type="button" class="btn btn-danger">Reset</button>
+                    </li>-->
+               </ul>
+          </div>
+
+          <!-- Filters -->
+          <div class="card-body">
+               <div class = "d-flex flex-row flex-wrap p-1 justify-content-center" id = "filters">
+
+                    <!-- Leagues -->
+                    <select class = "custom-select m-3 border-secondary" ng-model="leagueName" ng-options="ln for ln in fixture.leagueNames" style = "width:200px">
+                              <option class = "text-center" value="">All Leagues</option>
+                    </select>
+
+                    <!-- Teams -->
+                    <select class = "custom-select m-3 border-secondary" ng-model="teamKey" ng-options="t.key as t.name for t in fixture.teams  |
+                              unique: 'key' | orderBy: 'name' " style = "width:200px"><option class = "text-center" value="">All Teams</option>
+                    </select>
+
+                    <!-- Date -->
+                    <div class="form-group row m-3">
+                         <input type="text" class="form-control border-secondary" ng-model = "myDate.date" placeholder="Date: yyyy-mm-dd" style = "width:200px">
+                    </div>
+
+                    <!--
+                    <select class = "custom-select m-3 border-secondary" ng-model="mdate" ng-options="d.date as d.date for d in fixture.dates |
+                              unique: 'date' "><option class = "text-center" value="">Choose a date</option>
+                    </select>
+                    -->
+
+                    <!-- MatchDays -->
+                    <select class = "custom-select m-3 border-secondary" ng-model="mday" ng-options="m.day as m.day for m in fixture.matchdays |
+                              unique: 'day' " style = "width:200px"><option class = "text-center" value="">All Matchdays</option>
+                    </select>
+
+                    <!-- Scores -->
+                    <select class = "custom-select m-3 border-secondary" ng-model="score" ng-options="s.score as s.score for s in fixture.scores |
+                              unique: 'score' | orderBy: 'score' " style = "min-width:200px"><option class = "text-center" value="">All Scores</option>
+                    </select>
+
+               </div><hr>
+
+               <!-- Reset button-->
+               <div class = "row"><button type="button" class="btn btn-danger ml-auto mr-auto" ng-click = "fixture.clear()">Reset all filters</button></div>
+          </div>
+     </div><br><br>
+
+     <!-- Schedule -->
+     <div class = "row ml-md-5 mr-md-5 ml-1 mr-1" ng-init = "fixture.allDetails()">
+
+          <table class="table table-bordered table-hover text-center" style = "overflow:hidden" ng-repeat = "md in fixture.matchDetails |
+                    filter: { name:leagueName || undefined }">
+
+               <thead class = "bg-dark text-white text-uppercase">
+
+                    <!-- Display League Name -->
+                    <tr class="row">
+                         <th class="col-12">{{md.name}}</th>
+                    </tr><br>
+                    <tr class="row">
+                         <th class="col-4 col-sm-3">Date</th>
+                         <th class="col-4 col-sm-3">Match day</th>
+                         <th class="col-4 col-sm-6">Result</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr class="row" ng-repeat = "d in md.details | filterBy:  ['teamKey1', 'teamKey2']: teamKey | filterBy:  ['score1', 'score2']: score |
+                              filter: { 'matchday': mday || undefined  }:true | filter: myDate " ng-click = "fixture.passParams(md.name,d.matchday,d.date,d.teamName1,
+                              d.teamCode1,d.score1,d.teamName2,d.teamCode2,d.score2)">
+                         <td class="col-4 col-sm-3 date" >{{d.date}}</td>
+                         <td class="col-4 col-sm-3 date" >{{d.matchday}}</td>
+                         <td class="col-4 col-sm-6">
+                               <div class = "row">
+                                   <div class = "col-sm-6">
+                                         <div class = "row score">
+                                              <div class = "col-6 col-sm-8">{{d.teamCode1}}</div>
+                                              <div class = "col-6 col-sm-4">{{d.score1}}</div>
+                                         </div>
+                                   </div>
+                                   <div class = "col-sm-6">
+                                         <div class = "row score">
+                                             <div class = "col-6 col-sm-8 order-sm-2">{{d.teamCode2}}</div>
+                                             <div class = "col-6 col-sm-4 order-sm-1">{{d.score2}}</div>
+                                         </div>
+                                   </div>
+                               </div>
+                          </td></a>
+                      </tr>
+                 </tbody>
+
+          </table><br>
+
+     </div><br>
+</div>

@@ -1,0 +1,103 @@
+*{
+     box-sizing: border-box;
+}
+
+body{
+     /*background: url(../img/football-stadium.jpg) top center fixed;
+     background-size: cover;*/
+     background-color: #E3E5E6;
+}
+
+.navbar{
+     background-color: #343A40;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand{
+     font-weight: 600;
+     font-size: 21px;
+     font-family:cursive;
+     color: white;
+}
+
+/*Adding Border to Active Section*/
+.navbar-custom .active{
+     border-bottom: 3px solid #2DC997;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+     font-weight: bold;
+     font-family: serif;
+     color: white;
+     border:1px solid transparent;
+}
+
+/* change the color of hovered links */
+.navbar-custom .nav-item:hover {
+     border-bottom: 3px solid #2DC997;
+     transition:ease-in-out 0.5s;
+     margin-bottom: -3px;
+}
+
+/*Navbar Toggle*/
+.navbar-toggler {
+    border: 1px solid white;
+}
+
+/*Navbar Toggle Icon*/
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/*Conatiner*/
+#display{
+     background-color:#E3E5E6;
+}
+
+#details{
+     background-color: #3C4E66;
+     font-family: arial, Verdana, Helvetica;
+}
+
+.name{
+     font-size: 1.6em;
+}
+
+.score{
+     font-size: 1.7em;
+}
+
+.code{
+     display: block;
+}
+
+.tname{
+     display: none;
+}
+
+.text_type_bold{
+
+     font-weight: bold;
+
+}
+
+@media only screen and (min-width:780px){
+
+     .code{
+          display: none;
+     }
+
+     .tname{
+          display: block;
+     }
+
+     .name{
+          font-size: 2em;
+     }
+
+     .score{
+          font-size: 2.5em;
+     }
+
+}

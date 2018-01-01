@@ -1,0 +1,72 @@
+<!-- View for displaying statistics for all leagues -->
+
+<div class = "container-fluid">
+
+     <!-- Heading Section -->
+     <div class = "heading text-uppercase">
+          <h2><b>{{stats.heading}}</b></h2>
+     </div>
+     <br>
+
+     <!-- League Selection -->
+     <div class="card text-center ml-md-5 mr-md-5 border-dark">
+          <div class="card-header"><b>League Selection</b></div>
+
+          <!-- Dropdown -->
+          <div class="card-body">
+               <div class = "d-flex p-1 justify-content-center">
+                    <select class = "custom-select m-3 border-secondary" ng-model="leagueName" ng-options="ln for ln in stats.leagueNames">
+                              <option class = "text-center" value="">All Leagues</option>
+                    </select>
+               </div>
+          </div>
+
+     </div><br><br>
+
+     <!-- Statistics -->
+     <div class = "row ml-md-5 mr-md-5 ml-1 mr-1" ng-init = "stats.stats()">
+
+          <table class="table table-bordered table-hover text-center" style = "overflow:hidden" ng-repeat = "td in stats.teamDetails |
+                    filter: { name:leagueName || undefined }">
+
+               <thead class = "bg-dark text-white text-uppercase">
+                    <tr class="row">
+                         <th class="col-12">{{td.name}}</th>
+                    </tr><br>
+                    <tr class="row">
+                         <th class="col-2 col-md-1">#</th>
+                         <th class="col-3">Teams</th>
+                         <th class="col-2 col-md-1">P</th>
+                         <th class="col-md-1 hide">W</th>
+                         <th class="col-md-1 hide">D</th>
+                         <th class="col-md-1 hide">L</th>
+                         <th class="col-md-1 hide">F</th>
+                         <th class="col-md-1 hide">A</th>
+                         <th class="col-2 col-md-1">GD</th>
+                         <th class="col-3 col-md-1">TP</th>
+                    </tr>
+               </thead>
+
+               <tbody>
+                    <tr class="row" ng-repeat = "d in td.teamDetails | stringToInteger | orderBy: [ '-points', '-gd', '-w' ] ">
+                         <td class="col-2 col-md-1"></td>
+                         <td class="col-3">
+                              <span class = "name">{{d.name}}</span>
+                              <span class = "code">{{d.code}}</span>
+                         </td>
+                         <td class="col-2 col-md-1">{{d.p}}</td>
+                         <td class="col-1 hide">{{d.w}}</td>
+                         <td class="col-1 hide">{{d.d}}</td>
+                         <td class="col-1 hide">{{d.l}}</td>
+                         <td class="col-1 hide">{{d.gf}}</td>
+                         <td class="col-1 hide">{{d.ga}}</td>
+                         <td class="col-2 col-md-1">{{d.gd}}</td>
+                         <td class="col-3 col-md-1">{{d.points}}</td>
+                    </tr>
+               </tbody>
+
+          </table>
+
+     </div>
+
+</div>

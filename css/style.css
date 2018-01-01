@@ -1,0 +1,95 @@
+*{
+     box-sizing: border-box;
+}
+
+body{
+     background: url(../img/football-stadium.jpg) top center fixed;
+     background-size: cover;
+}
+
+/*Navbar background*/
+.navbar{
+     background: rgba(0, 0, 0, 0.6);
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand{
+     font-weight: 600;
+     font-size: 21px;
+     font-family:cursive;
+     color: white;
+}
+
+/*
+Adding Border to Active Section
+.navbar-custom .active{
+     border-bottom: 2px solid #2DC997;
+}
+
+change the link color
+.navbar-custom .navbar-nav .nav-link {
+     font-weight: bold;
+     font-family: serif;
+     color: white;
+     border:1px solid transparent;
+}
+
+change the color of hovered links
+.navbar-custom .nav-item:hover {
+     border-bottom: 2px solid #2DC997;
+     transition: 0.5s;
+     margin-bottom: -2px;
+}
+
+/*Navbar Toggle
+.navbar-toggler {
+    border: 2px solid white;
+}
+
+/*Navbar Toggle Icon
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+*/
+
+/*Hide toggler and collapse for index page*/
+.navbar-toggler{
+     display: none;
+}
+
+.navbar-collapse ul{
+     display: none;
+}
+
+/*Setting the container*/
+#main{
+     background: rgba(0, 0, 0, 0.6);
+     height: 95vh;
+     width: 100%;
+}
+
+/*
+#buttons{
+     height: 90vh;
+}
+*/
+
+/*Styling buttons*/
+.btn-custom {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
+  width: 220px;
+  border-radius: 40px;
+  transition: 0.5s;
+  margin: 20px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-custom:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+}

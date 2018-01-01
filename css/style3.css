@@ -1,0 +1,109 @@
+*{
+     box-sizing: border-box;
+}
+
+body{
+     /*background: url(../img/football-stadium.jpg) top center fixed;
+     background-size: cover;*/
+     background-color: #E3E5E6;
+}
+
+.navbar{
+     background-color: #343A40;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand{
+     font-weight: 600;
+     font-size: 21px;
+     font-family:cursive;
+     color: white;
+}
+
+/*Adding Border to Active Section*/
+.navbar-custom .active{
+     border-bottom: 3px solid #2DC997;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+     font-weight: bold;
+     font-family: serif;
+     color: white;
+     border:1px solid transparent;
+}
+
+/* change the color of hovered links */
+.navbar-custom .nav-item:hover {
+     border-bottom: 3px solid #2DC997;
+     transition:ease-in-out 0.5s;
+     margin-bottom: -3px;
+}
+
+/*Navbar Toggle*/
+.navbar-toggler {
+    border: 1px solid white;
+}
+
+/*Navbar Toggle Icon*/
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/*Heading*/
+.heading{
+     text-align: center;
+     margin: 60px 0;
+}
+
+#stats{
+     background-color: grey;
+}
+
+/*Styling Table*/
+table tbody{
+     background-color: #F7F7F7;
+}
+
+/*Counter for postion*/
+tr:first-child
+{
+    counter-reset: Serial;           /* Set the Serial counter to 0 */
+}
+
+table
+{
+    border-collapse: separate;
+}
+
+tr td:first-child:before
+{
+  counter-increment: Serial;      /* Increment the Serial counter */
+  content: counter(Serial); /* Display the counter */
+}
+
+/*Showing only limited columns*/
+.hide{
+     display: none;
+}
+ /*Showing team codes intead of names*/
+.name{
+     display: none;
+}
+
+/*Showing team names and all columns*/
+@media only screen and (min-width:768px){
+
+     .hide{
+          display: block;
+     }
+
+     .code{
+          display: none;
+     }
+
+     .name{
+          display: block;
+     }
+
+}
