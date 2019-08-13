@@ -4,4 +4,4 @@ This SPA displays schedule, statistics and details of matches which are extracte
 
 Technologies Used - Bootstrap4, AngularJS, HTML5, CSS3 and JS 
 
-Live: https://keyur22.github.io/SPA-to-display-data-from-a-football-API/
+Live: https://keyur22.github.io/fetch-and-display-data-from-api/
